@@ -3762,3 +3762,291 @@ REQUEST_URI=/newWeb/index.php?r=Admin/Category/admin
 in C:\wamp\www\newWeb\protected\models\Category.php (111)
 in C:\wamp\www\newWeb\protected\modules\Admin\views\category\admin.php (62)
 in C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php (153)
+2012/12/04 05:45:44 [error] [exception.CException] exception 'CException' with message 'Property "Category.cnmae" is not defined.' in C:\wamp\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('cnmae')
+#1 C:\wamp\www\newWeb\protected\models\Category.php(145): CActiveRecord->__get('cnmae')
+#2 C:\wamp\www\newWeb\protected\models\Category.php(134): Category::appendChildren(Array, Object(Category))
+#3 C:\wamp\www\newWeb\protected\modules\Admin\views\category\create.php(14): Category::getInfo()
+#4 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', Array, true)
+#6 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', Array, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#8 C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php(83): CController->render('create', Array)
+#9 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CategoryController->actionCreate()
+#10 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#19 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/Category/...')
+#20 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/Category/create
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin
+---
+2012/12/04 05:56:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/news/create".' in C:\wamp\www\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/news/crea...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin/news
+---
+2012/12/04 05:56:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/news".' in C:\wamp\www\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/news')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/news
+---
+2012/12/04 06:09:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/news/create".' in C:\wamp\www\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/news/crea...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin/news
+---
+2012/12/04 06:45:21 [error] [php] Missing argument 2 for Category::getCateList(), called in C:\wamp\www\newWeb\protected\modules\Admin\views\default\index.php on line 82 and defined (C:\wamp\www\newWeb\protected\models\Category.php:154)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CBaseController.php(96): DefaultController->renderInternal()
+#1 C:\wamp\www\yii\framework\web\CController.php(870): DefaultController->renderFile()
+#2 C:\wamp\www\yii\framework\web\CController.php(783): DefaultController->renderPartial()
+#3 C:\wamp\www\newWeb\protected\modules\Admin\controllers\DefaultController.php(9): DefaultController->render()
+#4 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): DefaultController->actionIndex()
+#5 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\wamp\www\yii\framework\web\CController.php(287): DefaultController->runAction()
+#7 C:\wamp\www\yii\framework\web\CController.php(266): DefaultController->runActionWithFilters()
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(276): DefaultController->run()
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\newWeb\index.php(13): CWebApplication->run()
+REQUEST_URI=/newWeb/index.php?r=Admin
+in C:\wamp\www\newWeb\protected\models\Category.php (154)
+in C:\wamp\www\newWeb\protected\modules\Admin\views\default\index.php (82)
+in C:\wamp\www\newWeb\protected\modules\Admin\controllers\DefaultController.php (9)
+2012/12/04 06:45:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cid' in 'where clause'. The SQL statement executed was: SELECT * FROM `bl_category` `t` WHERE cid=:id and type=:type.
+in C:\wamp\www\newWeb\protected\models\Category.php (158)
+in C:\wamp\www\newWeb\protected\modules\Admin\views\default\index.php (82)
+in C:\wamp\www\newWeb\protected\modules\Admin\controllers\DefaultController.php (9)
+2012/12/04 06:45:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cid' in 'where clause'. The SQL statement executed was: SELECT * FROM `bl_category` `t` WHERE cid=:id and type=:type' in C:\wamp\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\wamp\www\newWeb\protected\models\Category.php(158): CActiveRecord->findAll('cid=:id and typ...', Array)
+#4 C:\wamp\www\newWeb\protected\modules\Admin\views\default\index.php(82): Category::getCateList(0, 1)
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', NULL, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', NULL, true)
+#8 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#9 C:\wamp\www\newWeb\protected\modules\Admin\controllers\DefaultController.php(9): CController->render('index')
+#10 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): DefaultController->actionIndex()
+#11 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\wamp\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('')
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin')
+#16 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin
+---
+2012/12/04 06:45:51 [error] [exception.CException] exception 'CException' with message 'Property "CTreeView.copllapsed" is not defined.' in C:\wamp\www\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('copllapsed', 'true')
+#1 C:\wamp\www\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(DefaultController), 'CTreeView', Array)
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(190): CBaseController->createWidget('CTreeView', Array)
+#3 C:\wamp\www\newWeb\protected\modules\Admin\views\default\index.php(88): CBaseController->beginWidget('CTreeView', Array)
+#4 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', NULL, true)
+#6 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', NULL, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\wamp\www\newWeb\protected\modules\Admin\controllers\DefaultController.php(9): CController->render('index')
+#9 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): DefaultController->actionIndex()
+#10 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin')
+#15 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin
+---
+2012/12/04 06:52:44 [error] [php] Object of class CTreeView could not be converted to string (C:\wamp\www\newWeb\protected\modules\Admin\views\category\create.php:18)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(870): CategoryController->renderFile()
+#1 C:\wamp\www\yii\framework\web\CController.php(783): CategoryController->renderPartial()
+#2 C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php(83): CategoryController->render()
+#3 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CategoryController->actionCreate()
+#4 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CategoryController->runAction()
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CategoryController->filterAccessControl()
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(266): CategoryController->runActionWithFilters()
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CategoryController->run()
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\newWeb\index.php(13): CWebApplication->run()
+REQUEST_URI=/newWeb/index.php?r=Admin/Category/create
+in C:\wamp\www\newWeb\protected\modules\Admin\views\category\create.php (18)
+in C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php (83)
+in C:\wamp\www\newWeb\index.php (13)
+2012/12/04 06:56:16 [error] [exception.CException] exception 'CException' with message 'Property "Category.cid" is not defined.' in C:\wamp\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('cid')
+#1 C:\wamp\www\newWeb\protected\models\Category.php(162): CActiveRecord->__get('cid')
+#2 C:\wamp\www\newWeb\protected\modules\Admin\views\category\create.php(24): Category::getCateList(0, 1)
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#4 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', Array, true)
+#5 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', Array, true)
+#6 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#7 C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php(83): CController->render('create', Array)
+#8 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CategoryController->actionCreate()
+#9 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#12 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#16 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#18 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/Category/...')
+#19 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/Category/create
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin
+---
+2012/12/04 07:01:28 [error] [php] Missing argument 2 for Category::getCateList(), called in C:\wamp\www\newWeb\protected\models\Category.php on line 162 and defined (C:\wamp\www\newWeb\protected\models\Category.php:154)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CBaseController.php(127): require()
+#1 C:\wamp\www\yii\framework\web\CBaseController.php(96): CategoryController->renderInternal()
+#2 C:\wamp\www\yii\framework\web\CController.php(870): CategoryController->renderFile()
+#3 C:\wamp\www\yii\framework\web\CController.php(783): CategoryController->renderPartial()
+#4 C:\wamp\www\newWeb\protected\modules\Admin\controllers\CategoryController.php(83): CategoryController->render()
+#5 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CategoryController->actionCreate()
+#6 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CategoryController->runAction()
+#8 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#10 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CategoryController->filterAccessControl()
+#11 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\www\yii\framework\web\CController.php(266): CategoryController->runActionWithFilters()
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CategoryController->run()
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\newWeb\index.php(13): CWebApplication->run()
+REQUEST_URI=/newWeb/index.php?r=Admin/Category/create
+in C:\wamp\www\newWeb\protected\models\Category.php (154)
+in C:\wamp\www\newWeb\protected\models\Category.php (162)
+in C:\wamp\www\newWeb\protected\modules\Admin\views\category\create.php (24)
+2012/12/04 08:33:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/news/create".' in C:\wamp\www\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/news/crea...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create&cid=5
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin
+---
+2012/12/04 09:01:30 [error] [php] Non-static method Category::getCateName() should not be called statically, assuming $this from incompatible context (C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php:13)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(870): NewsController->renderFile()
+#1 C:\wamp\www\newWeb\protected\modules\Admin\views\news\create.php(18): NewsController->renderPartial()
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(127): require()
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(96): NewsController->renderInternal()
+#4 C:\wamp\www\yii\framework\web\CController.php(870): NewsController->renderFile()
+#5 C:\wamp\www\yii\framework\web\CController.php(783): NewsController->renderPartial()
+#6 C:\wamp\www\newWeb\protected\modules\Admin\controllers\NewsController.php(78): NewsController->render()
+#7 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): NewsController->actionCreate()
+#8 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): NewsController->runAction()
+#10 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#12 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): NewsController->filterAccessControl()
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(266): NewsController->runActionWithFilters()
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(276): NewsController->run()
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#18 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\wamp\www\newWeb\index.php(13): CWebApplication->run()
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create&cid=12
+in C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php (13)
+in C:\wamp\www\newWeb\protected\modules\Admin\views\news\create.php (18)
+in C:\wamp\www\newWeb\protected\modules\Admin\controllers\NewsController.php (78)
+2012/12/04 09:02:37 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "texterea".' in C:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php(25): CComponent->__call('texterea', Array)
+#1 C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php(25): CActiveForm->texterea(Object(News), 'decription', Array)
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#3 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', Array, true)
+#5 C:\wamp\www\newWeb\protected\modules\Admin\views\news\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\new...')
+#7 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\new...', Array, true)
+#8 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\new...', Array, true)
+#9 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#10 C:\wamp\www\newWeb\protected\modules\Admin\controllers\NewsController.php(78): CController->render('create', Array)
+#11 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): NewsController->actionCreate()
+#12 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#21 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Admin/news/crea...')
+#22 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\newWeb\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create&cid=6
+HTTP_REFERER=http://localhost/newWeb/index.php?r=Admin
+---
+2012/12/04 09:29:59 [error] [php] include(NesType.php): failed to open stream: No such file or directory (C:\wamp\www\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php(8): spl_autoload_call()
+#1 C:\wamp\www\yii\framework\web\CBaseController.php(127): require()
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(96): NewsController->renderInternal()
+#3 C:\wamp\www\yii\framework\web\CController.php(870): NewsController->renderFile()
+#4 C:\wamp\www\newWeb\protected\modules\Admin\views\news\create.php(18): NewsController->renderPartial()
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require()
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): NewsController->renderInternal()
+#7 C:\wamp\www\yii\framework\web\CController.php(870): NewsController->renderFile()
+#8 C:\wamp\www\yii\framework\web\CController.php(783): NewsController->renderPartial()
+#9 C:\wamp\www\newWeb\protected\modules\Admin\controllers\NewsController.php(78): NewsController->render()
+#10 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): NewsController->actionCreate()
+#11 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): NewsController->runAction()
+#13 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#15 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): NewsController->filterAccessControl()
+#16 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#17 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 C:\wamp\www\yii\framework\web\CController.php(266): NewsController->runActionWithFilters()
+#19 C:\wamp\www\yii\framework\web\CWebApplication.php(276): NewsController->run()
+#20 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#21 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\wamp\www\newWeb\index.php(13): CWebApplication->run()
+REQUEST_URI=/newWeb/index.php?r=Admin/news/create&cid=12
+in C:\wamp\www\newWeb\protected\modules\Admin\views\news\_form.php (8)
+in C:\wamp\www\newWeb\protected\modules\Admin\views\news\create.php (18)
+in C:\wamp\www\newWeb\protected\modules\Admin\controllers\NewsController.php (78)

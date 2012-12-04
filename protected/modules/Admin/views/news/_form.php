@@ -5,15 +5,15 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<p class="note"> <span class="required">*</span> 为必填项</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'cid'); ?>
-		<?php echo $form->textField($model,'cid'); ?>
-		<?php echo $form->error($model,'cid'); ?>
+	<?php echo Category::model()->getCateName($_GET['cid']);?>
 	</div>
+	<pre>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'decription'); ?>
-		<?php echo $form->textField($model,'decription',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textArea($model,'decription',array('size'=>60,'style'=>'width:500px;height:100px;resize:none;style:-100px;','maxlength'=>100)); ?>
 		<?php echo $form->error($model,'decription'); ?>
 	</div>
 
@@ -70,9 +70,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'type'); ?>
+		<?php echo $form->labelEx($model,'type_id'); ?>
+		<?php echo $form->textField($model,'type_id'); ?>
+		<?php echo $form->error($model,'type_id'); ?>
 	</div>
 
 	<div class="row">

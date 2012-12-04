@@ -29,7 +29,7 @@ $this->menu=array(
 		'recomendation',
 		'tag',
 		'updateTime',
-		'type',
+		'type_id',
 		'home_cate',
 		'home_top',
 		'children_top',

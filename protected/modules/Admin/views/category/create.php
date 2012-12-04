@@ -10,22 +10,8 @@ $this->menu=array(
 );
 ?>
 
-<?php
-Category::getInfo();
 
 
-?>
-<?php
-	// $this->beginWidget('CTreeView',array(
-	// 	'data'=>Category::model()->getCates(),
-	// 	'animated'=>'slow',
-	// 	'collapsed'=>'true',
-	// 	'persist'=>'cookie',
-
-
-	// 	));
-
-// $this->endWidget();?>
 <?php $url=Yii::app()->request->baseUrl;?>
 <script src="<?php echo $url?>/js/form.js" type="text/javascript" charset="utf-8" async defer></script>
 <div id="form_content">

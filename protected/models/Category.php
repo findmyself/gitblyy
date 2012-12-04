@@ -137,17 +137,38 @@ class Category extends CActiveRecord
 		return $data;
 		
 	}
-	public static function appendChildren(&$data,$model,$path=0)
+	public static function appendChildren(&$data,$model,$path=5)
 	{
 
 		foreach ($model->children as $m) {
-			$data[$m->id]=str_pad($m->cname, $path,'-',STR_PAD_LEFT);
-			self::appendChildren($data,$m,$path+1);
+			$cname='乚'.$m->cname;
+			$cname=str_pad($cname,strlen($m->cname)+$path,'-',STR_PAD_LEFT);
+			if(!array_key_exists($m->id, $data))	
+			$data[$m->id]=$cname;
+			self::appendChildren($data,$m,$path+2);
 			# code...
 		
 		}
 
-	} 
+	}
+	public static function getCateList($id)
+	{
+		$data=array();
+	
+		$model=Category::model()->findAll('pid=:id',array(":id"=>$id));
+			
+		foreach ($model as $v) {
+			# code...
+		
+			$list['text']=CHtml::link($v->cname,array("news/create",'cid'=>$v->id),array('target'=>'con','class'=>'treea'));
+			$list['children']=Category::model()->getCateList($v->id);
+			$data[]=$list;
+			
+		}
+		
+		return $data;
+	}
+
 
 
 }

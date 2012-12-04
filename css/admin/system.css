@@ -78,21 +78,28 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .left_menu h3{font-weight: 700;color: #275d96;border-bottom:1px solid #d9e4ea; line-height:24px; height:24px; margin-bottom:4px;_width:112px;_margin-right:12px}
 
 .left_menu ul li{width:122px;color:#666; display:block;_margin-right:2px}
-.left_menu ul li a{line-height:24px;padding-left:8px;display:block;text-decoration: none;background-color:#f7fbfc;_width:100px;}
+.left_menu ul li a{line-height:24px;color:#439ACF;border:solid 1px #DDDDDD; border-radius: 2px;    padding-left:8px;display:block;text-decoration: none;background-color:#F5F5F5;_width:100px;}
 .left_menu ul li a:hover,
-	.left_menu ul li.on,.left_menu h3 span{background: url(/newWeb/images/admin_img/left_menu.png) no-repeat;text-decoration: none}
+	.left_menu ul li.on,.left_menu h3 span{text-decoration: none}
 	.left_menu ul li.on{width:104px; height:29px; padding-left:20px; margin:0;}
 	.left_menu ul li.on a{ height:29px; line-height:29px; background:none; padding:0; display:block}
 	.left_menu ul li.on a:hover{background:none}
 
-.left_menu ul li a:hover{background-position: left -38px}
+.left_menu ul li a:hover{background-position: left -38px;color:#3F71B4;}
 .left_menu a.open,.left_menu a.close{background: url(/newWeb/images/admin_img/left_menu_openClose.png) no-repeat 3px center;width:10px; display:block; position:absolute; z-index:100; height:auto; right:-11px; top:0}
 .left_menu a.open:hover,.left_menu a.close:hover{ background-color:#d6e1e4}
 .left_menu a.close{background-position:right center}
 .left_menu h3 span{background-position: left -78px; display:block; float:right; height:14px; width:14px; margin-top:5px}
 .left_menu h3 span.on{background-position: -33px -78px;}
 .l_menu .on{background:url(/newWeb/images/admin_img/left_menu.png);} 
-.l_menu ul{ display: none;}
+.sub_menu a{margin-bottom:5px; }
+.left_menu .aon{
+	background: #fff;
+	color:#ff6600;
+font-weight:bold;
+}
+
+/*.l_menu ul{ display: none;}*/
 /*当前位置*/
 .crumbs{background-position:left -18px; height:22px; padding:6px 0 0 18px;*height:20px;*padding:8px 0 0 18px;}
 .shortcut{ float:right; position:relative; top:-3px;*top:-4px;}
@@ -100,7 +107,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .shortcut a,.shortcut a span{background: url(/newWeb/images/admin_img/bnt_bg.png) no-repeat 0 -83px; height:21px; line-height:21px;*line-height:24px;_line-height:20px; text-align:center;}
 .shortcut a span{background-position: right -83px; padding-right:6px;}
 /*容器样式*/
-.col-tab{ }
+.col-tab{}
 .col-tab ul.tabBut{height:27px; padding-left:14px;position:relative;bottom:-1px}
 .col-tab ul.tabBut li{float:left; border:1px solid #dce3ed; height:25px; line-height:26px; margin-right:5px;}
 .col-tab ul.tabBut li{ background:#eaeef4; padding:0 8px;}
@@ -110,7 +117,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .col-tab .content-r{border-top:1px solid #dce3ed}
 .col-tab .contentList{border:1px solid #dce3ed;_zoom:1;}
 
-.col-1{ border:1px solid #f4f6f5;zoom:1; background:#fff}
+.col-1{ border:1px solid #f4f6f5;zoom:1; background:#fff;position: relative;z-index: 99; }
 .col-1 div.content{border:1px solid #c2d1d8;zoom:1;}
 
 .col-2{ border:1px solid #c7d8ea;zoom:1;}

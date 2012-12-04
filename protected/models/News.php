@@ -15,7 +15,7 @@
  * @property integer $recomendation
  * @property string $tag
  * @property integer $updateTime
- * @property string $type
+ * @property integer $type_id
  * @property integer $home_cate
  * @property integer $home_top
  * @property integer $children_top
@@ -48,17 +48,16 @@ class News extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cid, bl_user_id', 'required'),
-			array('cid, bl_user_id, click, recomendation, updateTime, home_cate, home_top, children_top', 'numerical', 'integerOnly'=>true),
+			array('cid,title', 'required'),
+			array('cid, bl_user_id, click, recomendation, updateTime, type_id, home_cate, home_top, children_top', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
 			array('decription', 'length', 'max'=>100),
 			array('source', 'length', 'max'=>10),
 			array('tag', 'length', 'max'=>20),
-			array('type', 'length', 'max'=>45),
-			array('createTime', 'safe'),
+			array('id, cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type_id, home_cate, home_top, children_top', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type, home_cate, home_top, children_top', 'safe', 'on'=>'search'),
+			array('id, cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type_id, home_cate, home_top, children_top', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,19 +80,19 @@ class News extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'cid' => 'Cid',
-			'title' => 'Title',
-			'decription' => 'Decription',
+			'title' => '标题',
+			'decription' => '简介',
 			'createTime' => 'Create Time',
-			'source' => 'Source',
+			'source' => '来源',
 			'bl_user_id' => 'Bl User',
 			'click' => 'Click',
 			'recomendation' => 'Recomendation',
 			'tag' => 'Tag',
 			'updateTime' => 'Update Time',
-			'type' => 'Type',
-			'home_cate' => 'Home Cate',
-			'home_top' => 'Home Top',
-			'children_top' => 'Children Top',
+			'type_id' => 'Type',
+			'home_cate' => '首页置顶',
+			'home_top' => '更新到首页',
+			'children_top' => '分页置顶',
 		);
 	}
 
@@ -119,7 +118,7 @@ class News extends CActiveRecord
 		$criteria->compare('recomendation',$this->recomendation);
 		$criteria->compare('tag',$this->tag,true);
 		$criteria->compare('updateTime',$this->updateTime);
-		$criteria->compare('type',$this->type,true);
+		$criteria->compare('type_id',$this->type_id);
 		$criteria->compare('home_cate',$this->home_cate);
 		$criteria->compare('home_top',$this->home_top);
 		$criteria->compare('children_top',$this->children_top);
@@ -127,5 +126,28 @@ class News extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+
+	public function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			if($this->isNewRecord)
+			{
+				$this->bl_user_uid=Yii::app()->user->id;
+
+			}else
+			{
+				$this->updateTime=time();
+			}
+		}else
+		{
+			return false;
+		}
+	}
+	public function afterSave()
+	{
+		
 	}
 }

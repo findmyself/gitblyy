@@ -77,7 +77,17 @@
 				</div>
 				 <div class="l_menu">
 	          		 <h3 class="f14"><span class="switchs cu on" title="文章管理"></span>文章管理</h3>
-	           		<p class="cate_menu">新闻</p>
+	<?php
+			$this->beginWidget('CTreeView',array(
+				'data'=>Category::model()->getCateList(0),
+				'animated'=>'slow',
+				'collapsed'=>'false',
+				'persist'=>'cookie',
+
+				));
+
+ $this->endWidget();?>
+	           		<!-- <p class="cate_menu">新闻</p>
 	           		 <ul>
 		               	<li  class="sub_menu">
 		                	<a href="#" hidefocus="true" style="outline:none;">新闻</a></li>
@@ -103,7 +113,7 @@
 		                	<a href="#" hidefocus="true" style="outline:none;">度一学堂</a></li>
 		                <li  class="sub_menu">
 		                	<a href="#" hidefocus="true" style="outline:none;">诸家评论</a></li>
-	           		 </ul>
+	           		 </ul> -->
        			 </div>
        			 <div class="l_menu">
 	          		 <h3 class="f14"><span class="switchs cu on" title="作品管理"></span>作品管理</h3>
@@ -226,11 +236,27 @@ $(".top_menu").click(function()
 	_M(index,'#');
 })
 $(".sub_menu").click(function()
-{	$(".sub_menu").removeClass("ob fb blue on");
-	$(this).addClass("ob fb blue on");
+{	$(".sub_menu").removeClass("ob fb blue ");
+	$(this).addClass("ob fb blue");
 	$("#current_pos").data('clicknum', 1);
 
 })
+
+$(".left_menu ul li a").click(function()
+{
+		$(".aon").removeClass('aon');
+		$(this).addClass('aon');
+		
+	
+})
+$(".left_menu ul li a").hover(function()
+{	
+	$(this).animate({"margin-left":3},500);
+},function()
+{
+	$(this).animate({"margin-left":0},200)
+})
+
 $(".l_menu .cate_menu").click(function()
 {
 	$(".cate_on").removeClass("cate_on");
