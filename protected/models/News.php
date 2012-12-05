@@ -48,13 +48,13 @@ class News extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cid,title', 'required'),
+			array('title, bl_user_id', 'required'),
 			array('cid, bl_user_id, click, recomendation, updateTime, type_id, home_cate, home_top, children_top', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>30),
 			array('decription', 'length', 'max'=>100),
 			array('source', 'length', 'max'=>10),
 			array('tag', 'length', 'max'=>20),
-			array('id, cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type_id, home_cate, home_top, children_top', 'safe'),
+			array('cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type_id, home_cate, home_top, children_top', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, cid, title, decription, createTime, source, bl_user_id, click, recomendation, tag, updateTime, type_id, home_cate, home_top, children_top', 'safe', 'on'=>'search'),
@@ -87,12 +87,12 @@ class News extends CActiveRecord
 			'bl_user_id' => 'Bl User',
 			'click' => 'Click',
 			'recomendation' => 'Recomendation',
-			'tag' => 'Tag',
+			'tag' => '标签',
 			'updateTime' => 'Update Time',
 			'type_id' => 'Type',
-			'home_cate' => '首页置顶',
-			'home_top' => '更新到首页',
-			'children_top' => '分页置顶',
+			'home_cate' => 'Home Cate',
+			'home_top' => 'Home Top',
+			'children_top' => 'Children Top',
 		);
 	}
 
@@ -127,27 +127,41 @@ class News extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
-
-	public function beforeSave()
-	{
+	 public function beforeSave()
+	 {
 		if(parent::beforeSave())
 		{
-			if($this->isNewRecord)
+			if($this->isNewrecord)
 			{
-				$this->bl_user_uid=Yii::app()->user->id;
-
-			}else
-			{
-				$this->updateTime=time();
+				$this->bl_user_id=1;
+				$this->cid=$_GET['cid'];
+			}else{
+			
+				$this->updateTime=date('Y-m-d h:i:s');
 			}
-		}else
-		{
+		
+			return true;
+		}else{
+			echo '不存在';
 			return false;
 		}
-	}
+
+	 }
+
+
 	public function afterSave()
 	{
 		
+		 if(parent::afterSave())
+		 {
+		 // 	 if($this->isNewRecord)
+		 // {
+
+		 // }
+		 	echo 1;
+		 	exit;
+		 }
+
+
 	}
 }
